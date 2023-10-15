@@ -6,7 +6,7 @@ from langchain.chains import ConversationChain
 from langchain.llms.bedrock import Bedrock
 from langchain.memory import ConversationBufferMemory
 
-st.title("ChatBedrock")
+st.title("GenerativeAI: Optimizing Schedules Easily")
 
 # Setup bedrock
 bedrock_runtime = boto3.client(
@@ -33,7 +33,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("What is up?"):
+if prompt := st.chat_input("What are you looking for today?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
